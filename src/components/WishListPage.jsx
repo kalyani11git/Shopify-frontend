@@ -15,7 +15,7 @@ const WishlistPage = () => {
 
   useEffect(() => {
     const fetchWishlistProducts = async () => {
-      if (user && user.wishlist && user.wishlist.length > 0) {
+      if (user && user.wishlist ) {
         try {
           const products = await Promise.all(
             user.wishlist.map(async (productId) => {
