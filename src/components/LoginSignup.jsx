@@ -30,7 +30,7 @@ const LoginSignup = () => {
     e.preventDefault();
     try {
       if (method === "login") {
-        const res = await axios.post("http://localhost:5000/auth/login", {
+        const res = await axios.post("https://shopify-backend-703c.onrender.com/auth/login", {
           email: formData.email,
           password: formData.password,
         });
@@ -46,7 +46,7 @@ const LoginSignup = () => {
         navigate("/");
         
       } else {
-        await axios.post("http://localhost:5000/auth/signup", {
+        await axios.post("https://shopify-backend-703c.onrender.com/auth/signup", {
           name: formData.name,
           email: formData.email,
           password: formData.password,

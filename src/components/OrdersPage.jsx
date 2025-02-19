@@ -18,7 +18,7 @@ const OrdersPage = () => {
     if(user && user.user){
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/user-orders", {
+        const res = await axios.get("https://shopify-backend-703c.onrender.com/api/user-orders", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -87,7 +87,7 @@ const OrdersPage = () => {
     setCanceling(orderId); // Indicate which order is being canceled
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cancel-order",
+        "https://shopify-backend-703c.onrender.com/api/cancel-order",
         { orderId, userId: user.user._id },
         {
           headers: { Authorization: `Bearer ${user.token}` },

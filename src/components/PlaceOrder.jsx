@@ -117,14 +117,14 @@ const PlaceOrder = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/place-order", orderData, {
+      const res = await axios.post("https://shopify-backend-703c.onrender.com/api/place-order", orderData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       dispatch(placeOrder(res.data));
 
       await axios.delete(
-        "http://localhost:5000/api/remove-from-cart", // Correct the endpoint
+        "https://shopify-backend-703c.onrender.com/api/remove-from-cart", // Correct the endpoint
         {
           headers: { Authorization: `Bearer ${token}` },
           data: { productId: cartItems.map((item) => item.productId) }, // Send productId as part of the request body

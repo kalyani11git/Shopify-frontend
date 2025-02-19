@@ -39,7 +39,7 @@ export const fetchUser = (userId, token) => async (dispatch) => {
   dispatch(setLoading(true));
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/user",
+      "https://shopify-backend-703c.onrender.com/api/user",
       { userId }, // Send userId in the request body
       { headers: { Authorization: `Bearer ${token}` } }
     );
